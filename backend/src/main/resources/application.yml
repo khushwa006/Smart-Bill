@@ -1,0 +1,46 @@
+server:
+  port: ${PORT:8080}
+  forward-headers-strategy: framework
+spring:
+  application.name: smartbill-backend
+  datasource:
+    url: ${DATABASE_URL}
+    username: ${DATABASE_USERNAME}
+    password: ${DATABASE_PASSWORD}
+    hikari:
+      maximum-pool-size: ${DB_POOL_MAX:5}
+      minimum-idle: 1
+      connection-timeout: 10000
+      max-lifetime: 600000
+  jpa:
+    open-in-view: false
+    hibernate.ddl-auto: validate      # schema is owned by Flyway, never auto-generated
+    properties.hibernate.jdbc.time_zone: UTC
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+  jackson:
+    default-property-inclusion: non_null
+app:
+  frontend-origin: ${FRONTEND_ORIGIN:http://localhost:5173}
+  timezone: ${APP_TIMEZONE:Asia/Kolkata}
+  jwt:
+    secret: ${JWT_SECRET}
+    ttl-minutes: ${JWT_TTL_MINUTES:480}
+  cookie:
+    secure: ${COOKIE_SECURE:true}     # set false ONLY for local http development
+  native-engine:
+    path: ${NATIVE_ENGINE_PATH:/opt/smartbill/schedule-engine}
+    timeout-ms: ${NATIVE_ENGINE_TIMEOUT_MS:2000}
+  prediction:
+    url: ${PREDICTION_SERVICE_URL:http://localhost:8000}
+    token: ${PREDICTION_SERVICE_TOKEN:}
+    timeout-ms: ${PREDICTION_TIMEOUT_MS:8000}
+  scheduler:
+    enabled: ${SCHEDULER_ENABLED:true}
+  demo:
+    enabled: ${APP_DEMO_ENABLED:false}
+    password: ${DEMO_PASSWORD:}
+springdoc:
+  swagger-ui.enabled: ${SWAGGER_ENABLED:true}
+  api-docs.enabled: ${SWAGGER_ENABLED:true}

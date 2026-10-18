@@ -1,0 +1,17 @@
+{
+  "name": "smartbill-frontend",
+  "version": "0.1.0",
+  "description": "SmartBill frontend (vanilla JS, no build step)",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "node --test tests/*.test.js",
+    "serve": "python3 -m http.server 5173"
+  },
+  "devDependencies": {
+    "jsdom": "^25.0.1"
+  },
+  "private": true,
+  "type": "module"
+}

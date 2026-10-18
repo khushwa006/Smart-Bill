@@ -1,0 +1,37 @@
+/* SmartBill design tokens. One rule carries the whole system:
+   SOLID outline = confirmed money, DASHED outline = not confirmed (expected / predicted / estimated). */
+:root {
+  color-scheme: light;
+  --font: "Schibsted Grotesk", system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans", sans-serif;
+
+  /* type scale (1.2) */
+  --fs-xs: 0.75rem; --fs-sm: 0.875rem; --fs-md: 1rem; --fs-lg: 1.25rem; --fs-xl: 1.5rem; --fs-2xl: 2rem; --fs-3xl: 2.75rem;
+  --lh-tight: 1.15; --lh-body: 1.5;
+
+  /* spacing (4px base) */
+  --s-1: 0.25rem; --s-2: 0.5rem; --s-3: 0.75rem; --s-4: 1rem; --s-5: 1.5rem; --s-6: 2rem; --s-7: 3rem;
+
+  /* palette */
+  --paper: #eef1f5;          /* page ground */
+  --surface: #ffffff;
+  --ink: #16203a;            /* body text, 15.6:1 on surface */
+  --ink-2: #444e6b;          /* secondary, 8.4:1 */
+  --ink-3: #5f6985;          /* tertiary, 5.6:1 */
+  --line: #d9dfe8;
+  --line-strong: #b9c2d2;
+  --brand: #2b3fa3;          /* indigo ink, 8.9:1 on surface */
+  --brand-hover: #20318330;
+  --brand-soft: #e8ebfa;
+
+  --ok: #0f6b47;     --ok-bg: #e1f3ea;      /* paid / confirmed */
+  --warn: #7a4b00;   --warn-bg: #fdf0cf;    /* due soon (marigold family) */
+  --bad: #a8201a;    --bad-bg: #fbe6e4;     /* overdue */
+  --pred: #4a3bb3;   --pred-bg: #edeafb;    /* predicted / estimated */
+  --info: #1f4f8f;   --info-bg: #e3edf9;    /* upcoming */
+  --muted-bg: #eceff4;
+
+  --radius-sm: 6px; --radius: 10px; --radius-lg: 16px;
+  --shadow-pop: 0 12px 32px rgba(22, 32, 58, 0.18);
+  --focus: 0 0 0 3px #fff, 0 0 0 5px #2b3fa3;
+  --sidebar-w: 15rem; --sidebar-w-compact: 4.5rem; --topbar-h: 3.75rem; --bottomnav-h: 3.75rem;
+}
